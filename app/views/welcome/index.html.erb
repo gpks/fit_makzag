@@ -1,0 +1,22 @@
+<div class="col-lg-3"></div>
+<div class="col-lg-6">
+  <% @users.each do |user| %>
+    <div class="panel panel-info">
+      <div class="panel-heading parent">
+        <%= image_tag user.image_url, size: "50", class: "img-circle right" %>
+        <h3 class="panel-title"><%= user.name %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="col-lg-3">Łączna długość treningu:</div>
+        <div class="col-lg-3">
+        <%= user.activities_duration %>
+        </div>
+        <div class="col-lg-3">Data ostatniego treningu:</div>
+        <div class="col-lg-3">
+        <%= user.activities.last.date %>
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+</div>

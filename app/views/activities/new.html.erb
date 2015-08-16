@@ -1,0 +1,21 @@
+<div class="col-lg-2"></div>
+<div class="col-lg-10">
+  <%= simple_form_for(@activity, html: { class: 'form-horizontal' }) do |f| %>
+    <legend>Nowy Trening</legend>
+    <fieldset>
+      <div class="col-lg-10">
+        <%= f.input :description %>
+        <div class="col-lg-4">
+          <%= f.input :duration %>
+        </div>
+        <div class="col-lg-4">
+        <%= f.input :intensity, as: :range, input_html: {  min: 0, max: 10, value: 0 } %>
+        </div>
+        <div class="col-lg-4">
+        <%= f.input :date, as: :date, start_year: Date.today.year - 1, end_year: Date.today.year, order: [:day, :month, :year]%>
+        </div>
+        <%= f.button :submit, class: "btn btn-success"%>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
